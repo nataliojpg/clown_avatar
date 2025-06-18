@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Generador de Avatar Payaso</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+
+    #avatar {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto 30px;
+      background: white;
+      border: 2px solid #ccc;
+    }
+
+    #avatar img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .opciones {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0 30px;
+    }
+
+    .icono {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+    }
+
+    .icono:hover {
+      border: 2px solid #007bff;
+      transform: scale(1.05);
+    }
+
+    .icono.seleccionado {
+      border: 2px solid #28a745;
+    }
+
+    button {
+      font-family: 'Poppins', sans-serif;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <img src="/static/name.png" alt="Title" style="max-width: 40%; height: auto;">
+  <div id="avatar">
+    <img id="fondo" src="/static/fondo/fondo1.jpg" alt="fondo">
+    <img id="base" src="/static/base.png" alt="base">
+    <img id="ojos" src="/static/ojos/ojos1.png" alt="ojos">
+    <img id="ropa" src="/static/ropa/ropa1.png" alt="ropa">
+    <img id="gorro" src="/static/gorro/gorro1.png" alt="gorro">
+    <img id="boca" src="/static/boca/boca1.png" alt="boca">
+  </div>
+
+  <button onclick="descargarAvatar()">Descargar avatar</button>
+
+  <!-- OJOS -->
+  <h3>Ojos</h3>
+  <div class="opciones" id="opciones-ojos">
+    <!-- 7 opciones -->
+    <img src="/static/ojos/ojos1.PNG" class="icono" onclick="cambiarCapa('ojos', 'ojos1', this)">
+    <img src="/static/ojos/ojos2.png" class="icono" onclick="cambiarCapa('ojos', 'ojos2', this)">
+    <img src="/static/ojos/ojos3.png" class="icono" onclick="cambiarCapa('ojos', 'ojos3', this)">
+    <img src="/static/ojos/ojos4.png" class="icono" onclick="cambiarCapa('ojos', 'ojos4', this)">
+    <img src="/static/ojos/ojos5.png" class="icono" onclick="cambiarCapa('ojos', 'ojos5', this)">
+    <img src="/static/ojos/ojos6.png" class="icono" onclick="cambiarCapa('ojos', 'ojos6', this)">
+    <img src="/static/ojos/ojos7.png" class="icono" onclick="cambiarCapa('ojos', 'ojos7', this)">
+    <img src="/static/ojos/ojos8.png" class="icono" onclick="cambiarCapa('ojos', 'ojos8', this)">
+  </div>
+
+  <!-- ROPA -->
+  <h3>Ropa</h3>
+  <div class="opciones" id="opciones-ropa">
+    <img src="/static/ropa/ropa1.png" class="icono" onclick="cambiarCapa('ropa', 'ropa1', this)">
+    <img src="/static/ropa/ropa2.png" class="icono" onclick="cambiarCapa('ropa', 'ropa2', this)">
+    <img src="/static/ropa/ropa3.png" class="icono" onclick="cambiarCapa('ropa', 'ropa3', this)">
+    <img src="/static/ropa/ropa4.png" class="icono" onclick="cambiarCapa('ropa', 'ropa4', this)">
+    <img src="/static/ropa/ropa5.png" class="icono" onclick="cambiarCapa('ropa', 'ropa5', this)">
+    <img src="/static/ropa/ropa6.png" class="icono" onclick="cambiarCapa('ropa', 'ropa6', this)">
+    <img src="/static/ropa/ropa7.png" class="icono" onclick="cambiarCapa('ropa', 'ropa7', this)">
+    <img src="/static/ropa/ropa8.png" class="icono" onclick="cambiarCapa('ropa', 'ropa8', this)">
+  </div>
+
+  <!-- GORRO -->
+  <h3>Gorro</h3>
+  <div class="opciones" id="opciones-gorro">
+    <img src="/static/gorro/gorro1.png" class="icono" onclick="cambiarCapa('gorro', 'gorro1', this)">
+    <img src="/static/gorro/gorro2.png" class="icono" onclick="cambiarCapa('gorro', 'gorro2', this)">
+    <img src="/static/gorro/gorro3.png" class="icono" onclick="cambiarCapa('gorro', 'gorro3', this)">
+    <img src="/static/gorro/gorro4.png" class="icono" onclick="cambiarCapa('gorro', 'gorro4', this)">
+    <img src="/static/gorro/gorro5.png" class="icono" onclick="cambiarCapa('gorro', 'gorro5', this)">
+    <img src="/static/gorro/gorro6.png" class="icono" onclick="cambiarCapa('gorro', 'gorro6', this)">
+    <img src="/static/gorro/gorro7.png" class="icono" onclick="cambiarCapa('gorro', 'gorro7', this)">
+    <img src="/static/gorro/gorro8.png" class="icono" onclick="cambiarCapa('gorro', 'gorro8', this)">
+  </div>
+
+  <!-- BOCA -->
+  <h3>Boca</h3>
+  <div class="opciones" id="opciones-boca">
+    <img src="/static/boca/boca1.png" class="icono" onclick="cambiarCapa('boca', 'boca1', this)">
+    <img src="/static/boca/boca2.png" class="icono" onclick="cambiarCapa('boca', 'boca2', this)">
+    <img src="/static/boca/boca3.png" class="icono" onclick="cambiarCapa('boca', 'boca3', this)">
+    <img src="/static/boca/boca4.png" class="icono" onclick="cambiarCapa('boca', 'boca4', this)">
+    <img src="/static/boca/boca5.png" class="icono" onclick="cambiarCapa('boca', 'boca5', this)">
+    <img src="/static/boca/boca6.png" class="icono" onclick="cambiarCapa('boca', 'boca6', this)">
+    <img src="/static/boca/boca7.png" class="icono" onclick="cambiarCapa('boca', 'boca7', this)">
+    <img src="/static/boca/boca8.png" class="icono" onclick="cambiarCapa('boca', 'boca8', this)">
+  </div>
+
+  <!-- FONDO -->
+  <h3>Fondo</h3>
+  <div class="opciones" id="opciones-fondo">
+    <img src="/static/fondo/fondo1.jpg" class="icono" onclick="cambiarCapa('fondo', 'fondo1', this)">
+    <img src="/static/fondo/fondo2.jpg" class="icono" onclick="cambiarCapa('fondo', 'fondo2', this)">
+    <img src="/static/fondo/fondo3.jpg" class="icono" onclick="cambiarCapa('fondo', 'fondo3', this)">
+    <img src="/static/fondo/fondo4.jpg" class="icono" onclick="cambiarCapa('fondo', 'fondo4', this)">
+    <img src="/static/fondo/fondo5.jpg" class="icono" onclick="cambiarCapa('fondo', 'fondo5', this)">
+    <img src="/static/fondo/fondo6.jpg" class="icono" onclick="cambiarCapa('fondo', 'fondo6', this)">
+    <img src="/static/fondo/fondo7.jpg" class="icono" onclick="cambiarCapa('fondo', 'fondo7', this)">
+    <img src="/static/fondo/fondo8.jpg" class="icono" onclick="cambiarCapa('fondo', 'fondo8', this)">
+  </div>
+
+  <script>
+    function cambiarCapa(capa, nombreArchivo, elemento) {
+      const extension = capa === 'fondo' ? 'jpg' : 'png';
+      document.getElementById(capa).src = `/static/${capa}/${nombreArchivo}.${extension}`;
+
+      const grupo = document.getElementById(`opciones-${capa}`);
+      const iconos = grupo.querySelectorAll('.icono');
+      iconos.forEach(icono => icono.classList.remove('seleccionado'));
+      elemento.classList.add('seleccionado');
+    }
+
+    function descargarAvatar() {
+      const avatar = document.getElementById('avatar');
+      html2canvas(avatar, {
+        backgroundColor: null,
+        useCORS: true
+      }).then(canvas => {
+        const enlace = document.createElement('a');
+        enlace.download = 'mi-avatar.png';
+        enlace.href = canvas.toDataURL('image/png');
+        enlace.click();
+      });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</body>
+</html>
